@@ -41,7 +41,12 @@ gulp.task('templates', () => (
 			asset: 'dist',
 			exts: ['js', 'css']
 		})))
-		.pipe(rename({dirname: '.'}))
+		.pipe(rename(function (path) {
+			path.dirname = path.dirname.replace('pages','.');
+			// path.basename += "-goodbye";
+			// path.extname = ".md";
+		  }))
+		// .pipe(rename({dirname: dirname.replace('/\pages','')}))
 		.pipe(gulp.dest('dist'))
 ));
 
