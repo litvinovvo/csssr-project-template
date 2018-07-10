@@ -4,3 +4,5 @@ import $ from 'jquery';
 $(() => {
 	svg4everybody();
 });
+
+console.log('hello world');
